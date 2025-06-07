@@ -6,264 +6,82 @@
   <title>Passport Approval & Delivery Confirmation - Joan Luiser</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto&display=swap');
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #f0f4f8;
-      margin: 20px;
-      padding: 0;
-      color: #1a2b49;
-    }
-    .container {
-      max-width: 900px;
-      background: #ffffff;
-      padding: 40px 50px;
-      margin: auto;
-      border: 3px solid #1a2b49;
-      border-radius: 15px;
-      position: relative;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 0 8px rgba(26, 43, 73, 0.1);
-      background-image: linear-gradient(135deg, #ffffff 70%, #e6ecf5 100%);
-    }
-    header {
-      border-bottom: 4px double #1a2b49;
-      padding-bottom: 20px;
-      margin-bottom: 30px;
-      display: flex;
-      align-items: center;
-    }
-    .header-logo {
-      height: 70px;
-      float: left;
-      border: 2px solid #1a2b49;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .header-text {
-      margin-left: 90px;
-    }
-    .header-text h1 {
-      margin: 0;
-      font-family: 'Roboto Slab', serif;
-      font-weight: 800;
-      color: #1a2b49;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-    .header-text p {
-      margin: 5px 0 0;
-      font-size: 0.95rem;
-      color: #444;
-    }
-    .title {
-      text-align: center;
-      font-family: 'Roboto Slab', serif;
-      font-weight: 800;
-      font-size: 2rem;
-      margin: 30px 0;
-      color: #1a2b49;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    }
-    .content p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin: 12px 0;
-    }
-    .content strong {
-      color: #1a2b49;
-      font-weight: 600;
-    }
-    .passport-photo {
-      width: 120px;
-      height: 150px;
-      border: 3px solid #1a2b49;
-      border-radius: 5px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      margin: 20px 0;
-      display: block;
-    }
-    .details-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0 35px;
-      background: #f9fbfd;
-    }
-    .details-table th,
-    .details-table td {
-      border: 2px solid #ccc;
-      padding: 12px 18px;
-      text-align: left;
-      font-size: 1rem;
-    }
-    .details-table th {
-      background-color: #d9e2f3;
-      color: #1a2b49;
-      font-weight: 700;
-    }
-    .seal {
-      position: absolute;
-      right: 50px;
-      top: 50px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 5px solid #1a2b49;
-      background: radial-gradient(circle at center, #1a2b49 60%, transparent 65%);
-      box-shadow: 0 0 15px rgba(26, 43, 73, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.2);
-      color: #fff;
-      font-family: 'Roboto Slab', serif;
-      font-size: 1.4rem;
-      font-weight: 900;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      line-height: 1.1;
-      transform: rotate(5deg);
-      animation: sealGlow 3s infinite alternate;
-    }
-    @keyframes sealGlow {
-      from { box-shadow: 0 0 15px rgba(26, 43, 73, 0.3); }
-      to { box-shadow: 0 0 25px rgba(26, 43, 73, 0.5); }
-    }
-    .stamp {
-      position: absolute;
-      left: 50px;
-      top: 150px;
-      width: 150px;
-      height: 100px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 70"><rect width="100" height="70" fill="rgba(26, 43, 73, 0.1)"/><text x="50" y="40" font-family="Arial" font-size="12" fill="#1a2b49" text-anchor="middle">APPROVED</text></svg>');
-      transform: rotate(-10deg);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .watermark {
-      position: absolute;
-      top: 150px;
-      left: 50%;
-      transform: translateX(-50%) rotate(-30deg);
-      font-size: 8rem;
-      font-family: 'Roboto Slab', serif;
-      font-weight: 900;
-      color: rgba(26, 43, 73, 0.05);
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-      animation: hologram 2s infinite alternate;
-    }
-    @keyframes hologram {
-      from { filter: hue-rotate(0deg) brightness(1); }
-      to { filter: hue-rotate(90deg) brightness(1.2); }
-    }
-    .signature-section {
-      margin-top: 60px;
-      display: flex;
-      justify-content: space-between;
-      border-top: 2px dashed #1a2b49;
-      padding-top: 20px;
-    }
-    .signature-block {
-      text-align: center;
-      font-size: 0.95rem;
-      color: #444;
-    }
-    .signature-block .signature-line {
-      border-top: 2px solid #1a2b49;
-      width: 200px;
-      margin: 0 auto 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .footer-note {
-      text-align: center;
-      font-size: 0.85rem;
-      margin-top: 50px;
-      color: #666;
-      font-style: italic;
-    }
-    .btn-container {
-      text-align: center;
-      margin-top: 40px;
-    }
-    button {
-      background-color: #1a2b49;
-      color: #fff;
-      border: none;
-      padding: 14px 30px;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      margin: 0 15px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    button:hover {
-      background-color: #14223a;
-      transform: translateY(-2px);
-    }
+    body { font-family: 'Roboto', sans-serif; background: #f0f4f8; margin: 20px; padding: 0; color: #1a2b49; }
+    .container { max-width: 950px; background: #fff; padding: 45px 60px; margin: auto; border: 4px solid #1a2b49; border-radius: 18px; position: relative; box-shadow: 0 15px 30px rgba(0,0,0,0.2), 0 0 10px rgba(26,43,73,0.15); background: linear-gradient(135deg, #fff 60%, #e0e8f2 100%); }
+    header { border-bottom: 5px double #1a2b49; padding-bottom: 25px; margin-bottom: 35px; display: flex; align-items: center; }
+    .header-logo { height: 80px; border: 3px solid #1a2b49; border-radius: 6px; box-shadow: 0 6px 10px rgba(0,0,0,0.15); }
+    .header-text { margin-left: 100px; }
+    .header-text h1 { margin: 0; font-family: 'Roboto Slab', serif; font-weight: 900; color: #1a2b49; text-transform: uppercase; letter-spacing: 2px; }
+    .header-text p { margin: 6px 0 0; font-size: 1rem; color: #444; }
+    .title { text-align: center; font-family: 'Roboto Slab', serif; font-weight: 900; font-size: 2.2rem; margin: 35px 0; color: #1a2b49; text-transform: uppercase; letter-spacing: 2.5px; text-shadow: 2px 2px 5px rgba(0,0,0,0.1); }
+    .content p { font-size: 1.15rem; line-height: 1.7; margin: 15px 0; }
+    .content strong { color: #1a2b49; font-weight: 700; }
+    .passport-photo { width: 130px; height: 160px; border: 4px solid #1a2b49; border-radius: 6px; box-shadow: 0 8px 15px rgba(0,0,0,0.15); margin: 25px 0; display: block; }
+    .details-table { width: 100%; border-collapse: collapse; margin: 30px 0 40px; background: #f9fbfd; }
+    .details-table th, .details-table td { border: 2px solid #ccc; padding: 14px 20px; text-align: left; font-size: 1.05rem; }
+    .details-table th { background: #d9e2f3; color: #1a2b49; font-weight: 800; }
+    .seal { position: absolute; right: 60px; top: 60px; width: 130px; height: 130px; border-radius: 50%; border: 6px solid #1a2b49; background: radial-gradient(circle at center, #1a2b49 60%, transparent 65%); box-shadow: 0 0 20px rgba(26,43,73,0.4), inset 0 0 12px rgba(0,0,0,0.25); color: #fff; font-family: 'Roboto Slab', serif; font-size: 1.5rem; font-weight: 900; display: flex; justify-content: center; align-items: center; text-align: center; line-height: 1.1; transform: rotate(5deg); animation: sealGlow 3s infinite alternate; }
+    @keyframes sealGlow { from { box-shadow: 0 0 20px rgba(26,43,73,0.4); } to { box-shadow: 0 0 30px rgba(26,43,73,0.6); } }
+    .stamp { position: absolute; left: 60px; top: 180px; width: 160px; height: 110px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 70"><rect width="100" height="70" fill="rgba(26,43,73,0.12)"/><text x="50" y="40" font-family="Arial" font-size="14" fill="#1a2b49" text-anchor="middle">APPROVED</text></svg>'); transform: rotate(-12deg); box-shadow: 0 6px 12px rgba(0,0,0,0.25); animation: stampPulse 2s infinite alternate; }
+    @keyframes stampPulse { from { transform: rotate(-12deg) scale(1); } to { transform: rotate(-12deg) scale(1.02); } }
+    .watermark { position: absolute; top: 180px; left: 50%; transform: translateX(-50%) rotate(-30deg); font-size: 9rem; font-family: 'Roboto Slab', serif; font-weight: 900; color: rgba(26,43,73,0.06); text-shadow: 3px 3px 6px rgba(0,0,0,0.15); animation: hologram 2.5s infinite alternate; }
+    @keyframes hologram { from { filter: hue-rotate(0deg) brightness(1); } to { filter: hue-rotate(120deg) brightness(1.3); } }
+    .confirmation-section { margin: 40px 0; padding: 20px; background: #f0f7ff; border-left: 5px solid #1a2b49; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .confirmation-section p { font-size: 1.1rem; line-height: 1.6; margin: 10px 0; color: #1a2b49; }
+    .confirmation-section strong { color: #d32f2f; }
+    .btn-container { text-align: center; margin-top: 50px; }
+    button { background: #1a2b49; color: #fff; border: none; padding: 16px 35px; font-size: 1.2rem; border-radius: 10px; cursor: pointer; margin: 0 20px; transition: background 0.3s ease, transform 0.2s ease; box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+    button:hover { background: #14223a; transform: translateY(-3px); }
   </style>
 </head>
 <body>
   <div class="container" id="document">
     <header>
-      <img src="assets/france_logo.png" alt="France Embassy Logo" class="header-logo" />
+      <img src="https://i.imgur.com/FNgrmya.jpeg" alt="France Embassy Logo" class="header-logo" />
       <div class="header-text">
         <h1>France Embassy - Consulate General</h1>
-        <p>1234 Rue de l'Élysée, Paris, France | +33 1 23 45 67 89 | consulate.france@example.gov</p>
+        <p>4101 Reservoir Rd NW, Washington, DC 20007, USA | +331673889 | embassy.consulatefr@gmail.com</p>
       </div>
     </header>
 
     <div class="watermark">APPROVED</div>
     <div class="stamp"></div>
+    <div class="seal">FRANCE<br>EMBASSY<br>SEAL</div>
 
     <div class="title">Passport Application Approval & Delivery Confirmation</div>
 
     <div class="content">
       <p>To: <strong>Joan Luiser</strong></p>
-      <p>Passport application number <strong>FRA-USA-7850359</strong> has been <strong>successfully approved, validated, and authorized</strong> by the France Embassy Consulate General as of <strong>June 07, 2025</strong>.</p>
-      <p>All travel documents have been <strong>thoroughly verified and cleared</strong> by the consular officers.</p>
-      <p>Your passport has been <strong>scheduled for delivery</strong> and is <strong>awaiting your confirmation</strong> upon receipt.</p>
-      <p>The total fee of <strong>$390 USD</strong> has been processed, which includes shipping, tax, customs, and the tourist protection program.</p>
-      <img src="assets/joan_luiser_passport.jpg" alt="Passport Photograph of Joan Luiser" class="passport-photo" />
+      <p>Passport application number <strong>FRA-USA-7850359</strong> has been <strong>approved, validated, and authorized</strong> by the France Consulate General in Paris as of <strong>June 07, 2025</strong>. Documents from Paris are cleared and forwarded for delivery.</p>
+      <p>All documents are <strong>verified and cleared</strong> by the France Consulate General, 4 Avenue Gabriel, 75008 Paris, France.</p>
+      <p>Total fee: <strong>$390 USD</strong> (includes shipping, tax, customs, tourist protection).</p>
+      <img src="https://i.imgur.com/vYh2KXC.jpeg" alt="Passport Photograph of Joan Luiser" class="passport-photo" />
     </div>
 
     <table class="details-table" aria-label="Passport and Application Details">
-      <thead>
-        <tr>
-          <th>Detail</th>
-          <th>Information</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Detail</th><th>Information</th></tr></thead>
       <tbody>
         <tr><td>Full Name</td><td>Joan Luiser</td></tr>
         <tr><td>Passport Number</td><td>FRA-USA-7850359</td></tr>
         <tr><td>Nationality</td><td>American (visiting France)</td></tr>
         <tr><td>Date of Birth</td><td>14/08/1964</td></tr>
         <tr><td>Place of Birth</td><td>New York, USA</td></tr>
-        <tr><td>Application Date</td><td>20/04/2025</td></tr>
+        <tr><td>Application/Issue Date</td><td>20/04/2025</td></tr>
         <tr><td>Approval Date</td><td>23/05/2025</td></tr>
-        <tr><td>Issue Date</td><td>23/05/2025</td></tr>
         <tr><td>Expiring Date</td><td>23/05/2035</td></tr>
         <tr><td>Delivery Tracking ID</td><td>FD26041988BN</td></tr>
-        <tr><td>Issuing Authority</td><td>France Embassy, Paris</td></tr>
+        <tr><td>Issuing Authority</td><td>France Consulate General, Paris</td></tr>
       </tbody>
     </table>
 
-    <div class="signature-section">
-      <div class="signature-block">
-        <div class="signature-line"></div>
-        <div><strong>Consular Officer Signature</strong></div>
-      </div>
-      <div class="signature-block">
-        <div class="signature-line"></div>
-        <div><strong>Date: June 07, 2025</strong></div>
-      </div>
+    <div class="confirmation-section">
+      <p><strong>URGENT:</strong> Confirm your passport application and delivery today, <strong>June 07, 2025</strong>. Documents are cleared, forwarded, and in process for delivery post-payment.</p>
+      <p>Send payment receipts to <strong>gov.frconsulate.embassy@gmail.com</strong> or request wallet address from your agent. The France Consulate General in Paris will contact you with delivery details, tracking, and info after payment.</p>
+      <p>Delivery within <strong>3 business days</strong> post-verification.</p>
+      <p><strong>WARNING:</strong> Non-payment before <strong>11:30 EDT (15:30 WAT)</strong> voids documents. Payment by <strong>12:30 EDT (16:30 WAT)</strong> ensures dispatch, arriving in <strong>3-5 business days</strong>.</p>
     </div>
 
-    <div class="seal" aria-label="Official Embassy Seal">
-      <div>FRANCE<br>EMBASSY<br>SEAL</div>
-    </div>
-
-    <p class="footer-note">
-      This is an official system-generated document. No physical signature required. Please retain for your records.
-    </p>
+    <p class="footer-note">Official system-generated document. Retain for records.</p>
   </div>
 
   <div class="btn-container">
@@ -271,48 +89,31 @@
     <button id="download-png">Download PNG</button>
   </div>
 
-  <!-- Libraries for export -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
   <script>
-    // PDF download
     document.getElementById('download-pdf').addEventListener('click', () => {
       const { jsPDF } = window.jspdf;
-      const doc = new jsPDF({
-        unit: 'pt',
-        format: 'a4',
-      });
-      const element = document.getElementById('document');
-      html2canvas(element, { scale: 2, useCORS: true }).then(canvas => {
+      const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+      html2canvas(document.getElementById('document'), { scale: 2, useCORS: true }).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
         const imgProps = doc.getImageProperties(imgData);
         const pdfWidth = doc.internal.pageSize.getWidth();
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
         doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
         doc.save('JoanLuiser_PassportApproval.pdf');
-      }).catch(error => {
-        console.error('Error generating PDF:', error);
-        alert('Failed to generate PDF. Please try again.');
-      });
+      }).catch(() => alert('PDF failed. Try again.'));
     });
-
-    // PNG download
     document.getElementById('download-png').addEventListener('click', () => {
-      const element = document.getElementById('document');
-      html2canvas(element, { scale: 3, useCORS: true }).then(canvas => {
+      html2canvas(document.getElementById('document'), { scale: 3, useCORS: true }).then(canvas => {
         canvas.toBlob(blob => {
-          const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
-          a.href = url;
+          a.href = URL.createObjectURL(blob);
           a.download = 'JoanLuiser_PassportApproval.png';
           a.click();
-          URL.revokeObjectURL(url);
+          URL.revokeObjectURL(a.href);
         }, 'image/png');
-      }).catch(error => {
-        console.error('Error generating PNG:', error);
-        alert('Failed to generate PNG. Please try again.');
-      });
+      }).catch(() => alert('PNG failed. Try again.'));
     });
   </script>
 </body>
